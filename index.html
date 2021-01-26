@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: block;
+            margin: 15px 0;
+        }
+
+        span[class="All_OK"] {
+            display: none;
+        }
+
+        span[class="All_NG"] {
+            display: none;
+        }
+
+        span[class="Q1_OK"] {
+            display: none;
+        }
+
+        span[class="Q2_OK"] {
+            display: none;
+        }
+
+        input[data-q1="ok"]:checked~input[data-q2="ok"]:checked~span[class="All_OK"] {
+            display: block;
+        }
+
+        input[data-q1="ng"]:checked~input[data-q2="ng"]:checked~span[class="All_NG"] {
+            display: block;
+        }
+
+        input[data-q1="ok"]:checked~input[data-q2="ng"]:checked~span[class="Q1_OK"] {
+            display: block;
+        }
+
+        input[data-q1="ng"]:checked~input[data-q2="ok"]:checked~span[class="Q2_OK"] {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <span>Q1 今何問目？</span>
+    <input type="radio" name="q1" value="1" data-q1="ok">1問目
+    <input type="radio" name="q1" value="2" data-q1="ng">2問目
+    <input type="radio" name="q1" value="3" data-q1="ng">3問目
+    <input type="radio" name="q1" value="4" data-q1="ng">4問目
+    <span>Q2 今何問目？</span>
+    <input type="radio" name="q2" value="1" data-q2="ng">1問目
+    <input type="radio" name="q2" value="2" data-q2="ok">2問目
+    <input type="radio" name="q2" value="3" data-q2="ng">3問目
+    <input type="radio" name="q2" value="4" data-q2="ng">4問目
+
+    <span class="All_OK">全問正解！</span>
+    <span class="All_NG">全問不正解！</span>
+    <span class="Q1_OK">1問正解 Q1正解 Q2不正解 Q2の答え2問目 </span>
+    <span class="Q2_OK">1問正解 Q2正解 Q1不正解 Q1の答え1問目 </span>
+</body>
+
+</html>
